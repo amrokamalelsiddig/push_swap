@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:54:34 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/29 12:46:17 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/10/29 18:33:42 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,17 @@ void	free_nodes(t_stack *a, t_stack *b)
 	}
 }
 
-void free_split(t_push_swap *ps)
+void	free_split(t_push_swap *ps)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (ps->split_array[i])
 	{
 		free(ps->split_array[i]);
 		i++;
 	}
-	free(ps->split_array[i]);
+	free(ps->split_array);
 }
 
 void	ft_lstrangeup(t_stack **a)
@@ -77,53 +76,31 @@ void	ft_lstrangeup(t_stack **a)
 
 void	exit_error(int i, t_push_swap *ps)
 {
-	if (i == 6)
+	if (i == 6 || i == 1)
 	{
 		free_split(ps);
-		// free_nodes(ps->a, ps->b);
 		write(1, "Error\n", 6);
-	}
-	else if(i == 1)
-	{
-		write(1, "Error\n", 6);
-		// printf("atoi error\n\n"6;
-		free(ps->split_array);
 		exit(1);
 	}
-	else if(i == 2)
+	else if (i == 2 || i == 5 || i == 8)
 	{
 		write(1, "Error\n", 6);
-		// printf("atoi non num error\n\n"6;
-		free_split(ps);
-		exit(1);
-	}
-	else if(i == 5)
-	{
-		write(1, "Error\n", 6);
-		// printf("duplicate error\n\n"6;
 		free_nodes(ps->a, ps->b);
-		free(ps->split_array);
+		free_split(ps);
 		exit(1);
 	}
-	else if (i == 8)
-	{
-		// write(1, "Error\n", 6);
-		free_split(ps);
-		free_nodes(ps->a, ps->b);
-	}
-	return;
+	return ;
 }
-
-char	**whatever(char **result, int end)
-{
-	int	i;
-
-	i = 0;
-	while (i < end)
-	{
-		free(result[i]);
-		i++;
-	}
-	free(result);
-	return (0);
-}
+	// else if(i == 5)
+	// {
+	// 	write(1, "Error\n", 6);
+	// 	free_nodes(ps->a, ps->b);
+	// 	free_split(ps);
+	// 	exit(1);
+	// }
+	// else if (i == 8)
+	// {
+	// 	write(1, "Error\n", 6);
+	// 	free_split(ps);
+	// 	free_nodes(ps->a, ps->b);
+	// }

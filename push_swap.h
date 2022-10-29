@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:08:02 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/29 13:03:06 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/10/29 18:32:11 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ typedef struct push_swap
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack *tmp;
-	int	 	atoi_sign;
-	int  	atoi_res;
-	int  	atoi_i;
+	t_stack	*tmp;
+	int		atoi_sign;
+	int		atoi_res;
+	int		atoi_i;
 	int		main_i;
-	int 	main_j;
-	char 	**split_array;
+	int		main_j;
+	char	**split_array;
 	int		arguments;
 	int		index;
 }	t_push_swap;
@@ -58,7 +58,7 @@ void	ft_lstdelone(t_stack	*lst, void (*del)(void *));
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_back(t_stack **alst, t_stack *new);
 void	ft_lstadd_front(t_stack	**alst, t_stack	*new);
-int	    ft_lstsize(t_stack	*lst);
+int		ft_lstsize(t_stack	*lst);
 void	ft_lstclear(t_stack **lst, void (*del)(void*));
 
 //***************operations.c*******************//
@@ -72,14 +72,14 @@ void	ra(t_stack **a);
 void	fill_stack(t_stack **a, int val);
 
 //***************sorting_A.c*******************//
-int	    all_number(char **str);
+int		all_number(char **str);
 void	fill_it(int ac, char **av, t_stack **a);
 void	arg_handler(int ac, t_stack **a, t_stack **b);
 
 //***************sorting_B.c*******************//
-int	    max_binary_count(t_stack **a);
+int		max_binary_count(t_stack **a);
 void	radix_sort(t_stack **a, t_stack **b);
-int	    cost(t_stack **a, int val);
+int		cost(t_stack **a, int val);
 void	handle_min5(t_stack **a, t_stack **b);
 void	handle_max5(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
@@ -88,10 +88,9 @@ void	sort_three(t_stack **a);
 int		is_sorted(t_stack *s);
 int		space_locate(char *str);
 int		arg_count(int ac, char **av);
-char	**whatever(char **result, int end);
 int		ft_isspace(char str);
 int		ft_atoi(char *str, t_push_swap *ps);
-int 	all_num(char **str);
-int 	find_duplicate(t_stack **a, int val, t_push_swap *ps);
-void 	free_split(t_push_swap *ps);
+int		all_num(char **str);
+int		find_duplicate(t_stack **a, int val, t_push_swap *ps);
+void	free_split(t_push_swap *ps);
 #endif

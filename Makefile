@@ -6,7 +6,7 @@
 #    By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 18:04:30 by aelsiddi          #+#    #+#              #
-#    Updated: 2022/10/29 16:52:39 by aelsiddi         ###   ########.fr        #
+#    Updated: 2022/10/29 17:18:02 by aelsiddi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJES_B 	= ${SRCS_B:.c=.o}
 NAME 		= push_swap
 NAME_B		= checker
 CC 			= cc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 RM 			= rm -rf
 
 
