@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 19:24:07 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/24 21:00:23 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:16:17 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,25 +73,10 @@ int	cost(t_stack **a, int val)
 	tmp = *a;
 	while (tmp)
 	{
-		if (tmp->index == val)
+		if (tmp->data == val)
 			return (i);
 		tmp = tmp->next;
 		i++;
 	}
 	return (i);
-}
-
-void	handle_min5(t_stack **a, t_stack **b)
-{
-	int	min_loc;
-
-	min_loc = cost(a, 1);
-	if (min_loc == 2)
-		sa(a);
-	else if (!(min_loc == 1))
-	{
-		while ((*a)->index != 1)
-			reverse_rotate(a);
-	}
-	pb(a, b);
 }

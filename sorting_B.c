@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:00:28 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/29 17:11:53 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:08:53 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	handle_max5(t_stack **a, t_stack **b)
 	max_loc = cost(a, ft_lstsize((*a)));
 	if (!(max_loc == 1))
 	{
-		if (max_loc > 3)
+		if (max_loc >= 3)
 		{
-			while ((*a)->index < ft_lstsize((*a)))
+			while ((*a)->index != ft_lstsize((*a)))
 				reverse_rotate(a);
 		}
 		else
 		{
-			while ((*a)->index > ft_lstsize((*a)))
+			while ((*a)->index != ft_lstsize((*a)))
 				ra(a);
 		}
 	}
@@ -35,12 +35,11 @@ void	handle_max5(t_stack **a, t_stack **b)
 
 void	sort_five(t_stack **a, t_stack **b)
 {
-	handle_max5(a, b);
-	handle_min5(a, b);
+	pb_min(a, b);
+	pb_min(a, b);
 	sort_three(a);
 	pa(a, b);
 	pa(a, b);
-	ra(a);
 }
 
 void	sort_three(t_stack **a)

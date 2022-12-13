@@ -1,61 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   indexing.c                                         :+:      :+:    :+:   */
+/*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 19:51:10 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/12/13 02:21:53 by aelsiddi         ###   ########.fr       */
+/*   Created: 2022/12/13 15:56:33 by aelsiddi          #+#    #+#             */
+/*   Updated: 2022/12/13 19:16:02 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	indexing(t_stack **a, int i)
+void	pb_min(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	t_stack	*tmp2;
 	int		min;
+	int		min_loc;
 
-	tmp = *a;
+	min_loc = 0;
+	min = (*a)->data;
+	tmp = (*a);
 	while (tmp)
 	{
-		if (tmp->index == -1)
+		if (tmp->data < min)
 		{
 			min = tmp->data;
-			tmp2 = tmp;
-			break ;
 		}
 		tmp = tmp->next;
 	}
-	while (tmp)
+	min_loc = cost(a, min);
+	while ((*a)->data != min)
 	{
-		if (min > tmp->data && tmp->index == -1)
-		{
-			min = tmp->data;
-			tmp2 = tmp;
-		}
-		tmp = tmp->next;
+		if (min_loc <= 3)
+			ra(a);
+		else
+			reverse_rotate(a);
 	}
-	tmp2->index = i;
-}
-
-void	ft_lstiter(t_stack *lst, void (*f)(void *))
-{
-	if (!lst)
-		return ;
-	while (lst)
-	{
-		f(lst->next);
-		lst = lst->next;
-	}
-}
-
-void	ft_lstdelone(t_stack	*lst, void (*del)(void *))
-{
-	if (!lst)
-		return ;
-	del(lst->next);
-	free(lst);
+	pb(a, b);
 }

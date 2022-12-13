@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:08:02 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/29 18:32:11 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:07:33 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "libft/libft.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
@@ -37,18 +36,19 @@ typedef struct push_swap
 	int		atoi_res;
 	int		atoi_i;
 	int		main_i;
-	int		main_j;
-	char	**split_array;
+	int		mn_j;
+	char	**sp_ar;
 	int		arguments;
 	int		index;
 }	t_push_swap;
 
 //*************helpers.c************************//
+int		ft_strlen(char *str);
+int		check_space(char **str);
 void	print(t_stack *head);
 void	free_nodes(t_stack *a, t_stack *b);
 void	ft_lstrangeup(t_stack **a);
 void	exit_error(int i, t_push_swap *ps);
-
 //*************indexing************************//
 void	indexing(t_stack **a, int i);
 void	ft_lstiter(t_stack *lst, void (*f)(void *));
@@ -84,13 +84,15 @@ void	handle_min5(t_stack **a, t_stack **b);
 void	handle_max5(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
-
 int		is_sorted(t_stack *s);
 int		space_locate(char *str);
 int		arg_count(int ac, char **av);
 int		ft_isspace(char str);
 int		ft_atoi(char *str, t_push_swap *ps);
 int		all_num(char **str);
-int		find_duplicate(t_stack **a, int val, t_push_swap *ps);
+int		fdup(t_stack **a, int val, t_push_swap *ps);
 void	free_split(t_push_swap *ps);
+char	**ft_split(const char *str, char c);
+void	pb_min(t_stack **a, t_stack **b);
+void	pb_max(t_stack **a, t_stack **b);
 #endif
