@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:07:48 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/12/15 14:26:10 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:31:49 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	main(int ac, char **av)
 {
 	t_push_swap	ps;
 
-	struct_init(&ps,ac);
+	struct_init(&ps, ac);
 	check_space(av);
 	while (av[ps.main_i] != NULL)
 	{
