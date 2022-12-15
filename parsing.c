@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:52:40 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:04:16 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:19:23 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	fill_stack(t_stack **a, int val)
 		tmp = (t_stack *)malloc(sizeof(t_stack));
 		tmp->index = -1;
 		tmp->data = val;
+		tmp->next = NULL;
 		ft_lstadd_back(a, tmp);
 	}
 }

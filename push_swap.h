@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:08:02 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:07:33 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:26:15 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ void	free_split(t_push_swap *ps);
 char	**ft_split(const char *str, char c);
 void	pb_min(t_stack **a, t_stack **b);
 void	pb_max(t_stack **a, t_stack **b);
+
 #endif

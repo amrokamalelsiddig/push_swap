@@ -6,7 +6,7 @@
 /*   By: aelsiddi <aelsiddi@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:07:48 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:04:16 by aelsiddi         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:26:10 by aelsiddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	arg_handler(int ac, t_stack **a, t_stack **b)
 {
 	if (is_sorted((*a)))
 		return ;
-	if (ac < 2)
+	if (ac <= 2)
 		exit(1);
 	else if (ac == 3)
 	{
@@ -49,8 +49,10 @@ void	arg_handler(int ac, t_stack **a, t_stack **b)
 		radix_sort(a, b);
 }
 
-void	struct_init(t_push_swap *ps)
+void	struct_init(t_push_swap *ps, int ac)
 {
+	if (ac < 2)
+		exit(0);
 	ps->a = NULL;
 	ps->b = NULL;
 	ps->atoi_i = 0;
@@ -67,7 +69,7 @@ int	main(int ac, char **av)
 {
 	t_push_swap	ps;
 
-	struct_init(&ps);
+	struct_init(&ps,ac);
 	check_space(av);
 	while (av[ps.main_i] != NULL)
 	{
